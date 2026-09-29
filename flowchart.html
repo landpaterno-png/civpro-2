@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Civil Procedure II Flowchart</title>
+<style>
+:root{
+  --navy:#08182e;
+  --navy2:#0d2443;
+  --blue:#d7e8ff;
+  --blue2:#bfd7f4;
+  --teal:#0b536c;
+  --teal2:#0f718b;
+  --lav:#d5c8ff;
+  --gold:#f4cf6a;
+  --gold2:#e7b84f;
+  --cream:#fff7dc;
+  --ink:#10233f;
+  --white:#f8fbff;
+  --line:#7cd7ea;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Georgia, "Times New Roman", serif;
+  color:var(--white);
+  background:
+    radial-gradient(circle at 75% 15%, rgba(57,101,155,.25), transparent 24%),
+    radial-gradient(circle at 18% 35%, rgba(27,103,145,.20), transparent 28%),
+    linear-gradient(180deg,#06111f 0%,#0a1930 45%,#091627 100%);
+}
+.poster{
+  width:min(1120px,96vw);
+  margin:24px auto;
+  padding:28px 28px 34px;
+  border:1px solid rgba(244,207,106,.35);
+  border-radius:24px;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  background:
+    linear-gradient(rgba(6,17,31,.78),rgba(6,17,31,.82)),
+    linear-gradient(135deg,#0c2647,#08182e 55%,#0a1d35);
+}
+.header{
+  text-align:center;
+  padding:6px 16px 26px;
+}
+.header h1{
+  margin:0;
+  font-size:clamp(2rem,5vw,4.2rem);
+  letter-spacing:.02em;
+  line-height:1;
+}
+.header h1 span{color:var(--gold)}
+.header .sub{
+  color:var(--gold);
+  font-size:clamp(1.1rem,2.8vw,2rem);
+  margin-top:10px;
+}
+.ruleline{
+  height:2px;
+  max-width:720px;
+  margin:18px auto 0;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;
+  gap:28px;
+  align-items:start;
+}
+.flow{position:relative}
+.node{
+  position:relative;
+  border-radius:20px;
+  border:2px solid rgba(255,255,255,.5);
+  padding:18px 22px;
+  margin:0 auto;
+  text-align:center;
+  color:var(--ink);
+  box-shadow:0 10px 24px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.7);
+}
+.node .rule{
+  font-weight:800;
+  font-size:clamp(1.45rem,3vw,2.4rem);
+  letter-spacing:.03em;
+}
+.node .label{
+  font-size:clamp(1rem,2vw,1.35rem);
+  font-weight:700;
+  margin-top:3px;
+}
+.node .minor{
+  font-size:.95rem;
+  margin-top:7px;
+}
+.node.top{
+  background:linear-gradient(180deg,#0d6a85,#0c4d66);
+  color:white;
+  border-color:#6ce4f3;
+}
+.node.blue{
+  background:linear-gradient(180deg,#d9e9ff,#b9d4f4);
+}
+.node.lav{
+  background:linear-gradient(180deg,#e2d8ff,#c9baf4);
+}
+.node.final{
+  background:linear-gradient(180deg,#116b80,#0b4b63);
+  color:white;
+  border-color:#77e6ee;
+}
+.node.exec{
+  background:linear-gradient(180deg,#1d6ca8,#144c7c);
+  color:white;
+  border-color:#91cdfd;
+}
+.arrow{
+  width:0;height:0;
+  margin:8px auto;
+  border-left:13px solid transparent;
+  border-right:13px solid transparent;
+  border-top:18px solid var(--gold);
+  filter:drop-shadow(0 2px 0 rgba(0,0,0,.15));
+}
+.split{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 280px;
+  gap:18px;
+  align-items:center;
+}
+.appeal-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.appeal-link{
+  width:36px;height:4px;background:var(--gold);position:relative;margin-left:-5px;
+}
+.appeal-link:after{
+  content:"";
+  position:absolute;right:-1px;top:-6px;
+  border-left:12px solid var(--gold);
+  border-top:8px solid transparent;
+  border-bottom:8px solid transparent;
+}
+.return{
+  margin:8px 0 0;
+  width:74%;
+  height:52px;
+  border-right:4px solid var(--gold);
+  border-bottom:4px solid var(--gold);
+  border-radius:0 0 18px 0;
+  position:relative;
+}
+.return:after{
+  content:"";
+  position:absolute;left:-2px;bottom:-8px;
+  border-right:12px solid var(--gold);
+  border-top:8px solid transparent;
+  border-bottom:8px solid transparent;
+}
+.exception{
+  border:2px solid var(--gold);
+  border-radius:22px;
+  padding:16px;
+  margin:8px auto;
+  background:linear-gradient(180deg,rgba(14,31,52,.95),rgba(9,23,40,.95));
+}
+.exception-title{
+  text-align:center;
+  color:var(--gold);
+  font-weight:800;
+  letter-spacing:.04em;
+  margin-bottom:12px;
+}
+.ex-node{
+  background:linear-gradient(180deg,#f9e7b3,#e7c879);
+  color:#17253c;
+  border-radius:17px;
+  padding:14px 16px;
+  text-align:center;
+  margin:10px 0;
+  border:1px solid #fff2c2;
+}
+.ex-node .rule{font-size:1.55rem;font-weight:800}
+.ex-node .label{font-size:1.08rem;font-weight:700}
+.sidebar{
+  position:sticky;top:18px;
+}
+.sidebox{
+  background:linear-gradient(180deg,#0b385a,#092c49);
+  border:2px solid #4bd2e7;
+  border-radius:22px;
+  padding:20px;
+  box-shadow:0 12px 26px rgba(0,0,0,.2);
+}
+.sidebox h3{
+  margin:0;
+  font-size:1.55rem;
+  text-align:center;
+}
+.sidebox .kicker{
+  text-align:center;color:#dff9ff;margin-top:4px;font-weight:700;
+}
+.sidebox .desc{
+  margin:16px 0;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.35);
+  color:#e4f1ff;
+}
+.sidebox ul{margin:0;padding-left:22px}
+.sidebox li{margin:7px 0}
+.pending{
+  margin-top:14px;
+  border:2px solid #1da4ca;
+  border-radius:16px;
+  text-align:center;
+  padding:14px;
+  font-weight:800;
+  background:#0a2c47;
+}
+.hint{
+  margin-top:28px;
+  border:2px solid var(--gold);
+  border-radius:18px;
+  padding:16px 18px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
+  align-items:center;
+  background:rgba(6,17,31,.86);
+}
+.bulb{
+  font-size:2.2rem;
+  padding-right:12px;
+  border-right:2px solid var(--gold);
+}
+.hint b{color:var(--gold);font-size:1.2rem}
+.hint p{margin:4px 0 0;color:#f1f5ff}
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .sidebar{position:static}
+}
+@media(max-width:700px){
+  .split{grid-template-columns:1fr}
+  .appeal-link,.return{display:none}
+  .poster{padding:18px 12px}
+}
+@media print{
+  body{background:white}
+  .poster{width:100%;margin:0;box-shadow:none;border:none;border-radius:0}
+  .sidebar{position:static}
+}
+</style>
+</head>
+<body>
+<div class="poster">
+  <header class="header">
+    <h1>CIVIL PROCEDURE II <span>FLOWCHART</span></h1>
+    <div class="sub">From Plaintiff Rests to Execution</div>
+    <div class="ruleline"></div>
+  </header>
+
+  <div class="grid">
+    <main class="flow">
+      <div class="node top">
+        <div class="rule">PLAINTIFF RESTS</div>
+      </div>
+
+      <div class="arrow"></div>
+
+      <div class="node blue">
+        <div class="rule">RULE 33</div>
+        <div class="label">DEMURRER TO EVIDENCE</div>
+      </div>
+
+      <div class="arrow"></div>
+
+      <div class="node blue">
+        <div class="rule">RULES 34–35</div>
+        <div class="label">EARLY JUDGMENT DEVICES</div>
+        <div class="minor">• Judgment on the Pleadings<br>• Summary Judgment</div>
+      </div>
+
+      <div class="arrow"></div>
+
+      <div class="node blue">
+        <div class="rule">RULE 36</div>
+        <div class="label">JUDGMENT / FINAL ORDER / ENTRY</div>
+      </div>
+
+      <div class="arrow"></div>
+
+      <div class="split">
+        <div>
+          <div class="node lav">
+            <div class="rule">RULE 37</div>
+            <div class="label">MNT or MR</div>
+            <div class="minor">(Motion for New Trial or Reconsideration)</div>
+          </div>
+          <div class="arrow"></div>
+        </div>
+
+        <div class="appeal-wrap">
+          <div class="appeal-link"></div>
+          <div class="node lav" style="width:100%">
+            <div class="rule">APPEAL</div>
+            <div class="label">RULES 40–45 / RULE 64</div>
+          </div>
+          <div class="return"></div>
+        </div>
+      </div>
+
+      <div class="node final">
+        <div class="rule">FINAL &amp; EXECUTORY</div>
+      </div>
+
+      <div class="arrow"></div>
+
+      <div class="exception">
+        <div class="exception-title">EXCEPTIONAL REMEDIES (AFTER FINALITY)</div>
+        <div class="ex-node">
+          <div class="rule">RULE 38</div>
+          <div class="label">PETITION FOR RELIEF</div>
+          <div class="minor">(Exceptional)</div>
+        </div>
+        <div class="ex-node">
+          <div class="rule">RULE 47</div>
+          <div class="label">ANNULMENT OF JUDGMENT</div>
+          <div class="minor">(Exceptional)</div>
+        </div>
+      </div>
+
+      <div class="arrow"></div>
+
+      <div class="node exec">
+        <div class="rule">RULE 39</div>
+        <div class="label">EXECUTION, SATISFACTION,<br>AND EFFECTS OF JUDGMENTS</div>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebox">
+        <h3>RULES 57–61</h3>
+        <div class="kicker">PROVISIONAL REMEDIES</div>
+        <div class="desc">Ancillary protection while the main action is pending.</div>
+        <ul>
+          <li>Attachment</li>
+          <li>Injunction / TRO</li>
+          <li>Receivership</li>
+          <li>Replevin</li>
+          <li>Support pendente lite</li>
+        </ul>
+      </div>
+      <div class="pending">APPLIES DURING THE PENDENCY OF THE MAIN ACTION</div>
+    </aside>
+  </div>
+
+  <div class="hint">
+    <div class="bulb">💡</div>
+    <div>
+      <b>HIGH-YIELD IDEA:</b>
+      <p>Always ask: What stage is the case in? What court issued the ruling? What is the proper remedy?</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

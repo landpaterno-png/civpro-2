@@ -1,0 +1,652 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Civil Procedure II Ultimate Reviewer</title><style>
+:root{
+  --bg:#0b1020; --panel:#111831; --panel2:#16203d; --text:#eef3ff; --muted:#aeb9d6;
+  --accent:#7dd3fc; --accent2:#c4b5fd; --good:#86efac; --warn:#fde68a; --bad:#fda4af;
+  --line:#2b3966; --chip:#1c294d; --paper:#fbfdff; --ink:#14213d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#08101f,#0d1427 45%,#0b1020);color:var(--text);line-height:1.58}
+a{color:var(--accent)}
+.header{padding:42px 24px 30px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 15% 15%,#172a52 0,#0b1020 42%,#0b1020 100%)}
+.wrap{max-width:1260px;margin:auto}
+h1{font-size:clamp(2rem,5vw,4.1rem);line-height:1.02;margin:0 0 12px;letter-spacing:-.04em}
+.subtitle{font-size:1.06rem;color:var(--muted);max-width:860px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.badge{background:var(--chip);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:.8rem}
+.toolbar{position:sticky;top:0;z-index:40;background:rgba(11,16,32,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.toolbar .wrap{display:flex;gap:10px;align-items:center;padding:10px 18px}
+input[type=search]{flex:1;min-width:160px;background:#0e1730;color:white;border:1px solid var(--line);border-radius:10px;padding:11px 12px;outline:none}
+button{background:#1e2b52;color:white;border:1px solid #3b4b7c;border-radius:9px;padding:9px 12px;cursor:pointer}
+.layout{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:290px minmax(0,1fr);gap:22px;padding:24px 18px 70px}
+nav{position:sticky;top:68px;align-self:start;max-height:calc(100vh - 85px);overflow:auto;padding:12px;background:rgba(17,24,49,.72);border:1px solid var(--line);border-radius:14px}
+nav a{display:block;text-decoration:none;color:#cbd6f6;padding:7px 8px;border-radius:8px;font-size:.92rem}
+nav a:hover{background:#1b294c;color:white}
+main{min-width:0}
+section{background:rgba(17,24,49,.84);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px;box-shadow:0 16px 38px rgba(0,0,0,.12)}
+h2{font-size:1.7rem;margin:.2rem 0 .7rem;letter-spacing:-.02em}
+h3{font-size:1.18rem;margin:1.5rem 0 .55rem;color:#dbe7ff}
+h4{margin:1.2rem 0 .4rem;color:#cbdcff}
+p{margin:.55rem 0}
+ul,ol{margin:.45rem 0 .8rem;padding-left:1.3rem}
+li{margin:.26rem 0}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top}
+th{background:#182546;text-align:left;color:#e9efff}
+tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+.callout{border-left:4px solid var(--accent);background:#101b37;padding:12px 14px;border-radius:8px;margin:12px 0}
+.callout.good{border-left-color:var(--good)}
+.callout.warn{border-left-color:var(--warn)}
+.callout.bad{border-left-color:var(--bad)}
+.callout .label{font-weight:800;text-transform:uppercase;font-size:.74rem;letter-spacing:.08em;margin-bottom:2px}
+.tag{display:inline-block;padding:2px 7px;border-radius:999px;background:#22315a;border:1px solid #374877;font-size:.76rem;margin:2px 3px 2px 0}
+.kwentobox{background:#121e3d;border:1px dashed #475a92;padding:13px 14px;border-radius:10px}
+.rulebox{background:#0f1a34;border:1px solid #334679;padding:13px 14px;border-radius:10px}
+.flow{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;background:#091229;border:1px solid #283a6a;border-radius:10px;padding:12px;overflow:auto}
+details{background:#0f1830;border:1px solid #2c3b67;border-radius:10px;padding:9px 11px;margin:8px 0}
+summary{cursor:pointer;font-weight:700;color:#dce8ff}
+.quiz .answer{display:none;margin-top:8px;padding:10px;background:#0a142c;border-radius:8px}
+.quiz.open .answer{display:block}
+.correction{border:1px solid #5a4c23;background:linear-gradient(90deg,rgba(250,204,21,.08),rgba(17,24,49,.2));padding:12px 14px;border-radius:10px;margin:12px 0}
+.correction strong{color:#fde68a}
+.small{font-size:.84rem;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+.hidden-by-search{display:none!important}
+.paper-mode{background:#eef2f7!important;color:#111827!important}
+.paper-mode .header,.paper-mode .toolbar{background:#f8fafc!important;color:#111827!important}
+.paper-mode section,.paper-mode nav{background:white!important;color:#111827!important;border-color:#cbd5e1!important}
+.paper-mode h2,.paper-mode h3,.paper-mode h4{color:#172554!important}
+.paper-mode .callout,.paper-mode .kwentobox,.paper-mode .rulebox,.paper-mode details,.paper-mode .flow{background:#f8fafc!important;color:#111827!important;border-color:#cbd5e1!important}
+.paper-mode th{background:#e2e8f0!important;color:#111827!important}
+.paper-mode td{background:white!important}
+.paper-mode input[type=search]{background:white;color:#111827;border-color:#cbd5e1}
+@media(max-width:900px){.layout{grid-template-columns:1fr}nav{position:relative;top:auto;max-height:none}.toolbar .wrap{flex-wrap:wrap}}
+@media print{.toolbar,nav{display:none!important}.layout{display:block;padding:0}.header{background:white;color:black;padding:10px 0;border:0}body{background:white;color:black}.wrap{max-width:none}section{break-inside:avoid;background:white;color:black;border:1px solid #bbb;box-shadow:none}.callout,.kwentobox,.rulebox,.flow,details{background:white;color:black;border-color:#bbb}h2,h3,h4{color:black}a{color:black;text-decoration:none}}
+
+.media-card{
+  background:rgba(10,20,44,.72);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+  margin:12px 0 18px;
+}
+.media-card h4{margin:.2rem 0 .7rem}
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:14px;
+  margin-top:12px;
+}
+.video-card{
+  background:#0b1530;
+  border:1px solid #2d3f70;
+  border-radius:12px;
+  overflow:hidden;
+}
+.video-card .video-title{
+  padding:10px 12px;
+  font-weight:800;
+  color:#e8efff;
+}
+.video-card iframe{
+  display:block;
+  width:100%;
+  aspect-ratio:9/16;
+  border:0;
+  background:#000;
+}
+.flowchart-poster{
+  display:block;
+  width:min(100%,860px);
+  margin:14px auto;
+  border-radius:14px;
+  border:1px solid var(--line);
+  box-shadow:0 16px 36px rgba(0,0,0,.25);
+}
+.poster-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:10px;
+}
+.poster-actions a{
+  text-decoration:none;
+  background:#1e2b52;
+  color:white;
+  border:1px solid #3b4b7c;
+  border-radius:9px;
+  padding:8px 12px;
+}
+
+</style></head><body>
+<div class="header">
+  <div class="wrap">
+    <h1>Civil Procedure II — Ultimate Reviewer</h1>
+    <div class="subtitle">
+      Lecture-grounded master reviewer for Rules 33–39, 40–45, 47, 57–61 and Rule 64, organized according to your syllabus.
+      Lecture points are preserved; items that were unclear, outdated, or needed refinement are separately marked as <b>Verified Correction</b>.
+    </div>
+    <div class="badges">
+      <span class="badge">SDSC School of Law</span><span class="badge">Atty. Jeffrey T. Melo</span>
+      <span class="badge">S.Y. 2026–2027</span><span class="badge">2019 Amendments integrated</span>
+      <span class="badge">Searchable + Recitation Mode + Print Friendly</span>
+    </div>
+  </div>
+</div>
+
+<div class="toolbar">
+ <div class="wrap">
+   <input id="search" type="search" placeholder="Search: Rule 39, demurrer, FAME, Rule 42, TRO, terceria...">
+   <button onclick="expandAll()">Expand all</button>
+   <button onclick="collapseAll()">Collapse</button>
+   <button onclick="document.body.classList.toggle('paper-mode')">Light / Dark</button>
+   <button onclick="window.print()">Print / Save PDF</button>
+ </div>
+</div>
+
+<div class="layout">
+<nav>
+  <b>CONTENTS</b>
+  <a href="#roadmap">0. Master Roadmap</a>
+  <a href="#masterflow">0A. Visual Flowchart</a>
+  <a href="#r33">1. Rule 33 — Demurrer</a>
+  <a href="#r34">2. Rule 34 — JOP</a>
+  <a href="#r35">3. Rule 35 — Summary Judgment</a>
+  <a href="#r36">4. Rule 36 — Judgment & Entry</a>
+  <a href="#r37">5. Rule 37 — MNT / MR</a>
+  <a href="#appeals">6. Appeals — Rules 40–45 & 64</a>
+  <a href="#r38">7. Rule 38 — Petition for Relief</a>
+  <a href="#r47">8. Rule 47 — Annulment</a>
+  <a href="#r39">9. Rule 39 — Execution</a>
+  <a href="#provisional">10. Provisional Remedies</a>
+  <a href="#r57">11. Rule 57 — Attachment</a>
+  <a href="#r58">12. Rule 58 — Injunction / TRO</a>
+  <a href="#r59">13. Rule 59 — Receivership</a>
+  <a href="#r60">14. Rule 60 — Replevin</a>
+  <a href="#r61">15. Rule 61 — Support Pendente Lite</a>
+  <a href="#comparisons">16. High-Yield Comparisons</a>
+  <a href="#corrections">17. Corrections & Traps</a>
+  <a href="#recit">18. Recitation Drills</a>
+  <a href="#coverage">19. Syllabus Coverage</a>
+</nav>
+
+<main>
+<section id="roadmap">
+<h2>0. Master Roadmap: Where CivPro II Begins</h2>
+<div class="kwentobox"><b>KWENTO:</b> Tapos na si plaintiff mag-present at mag-formal offer ng evidence, at nag-rest na siya. Dito nagsisimula ang practical focus ng CivPro II: puwede bang tapusin ang kaso without completing a full trial, paano i-challenge ang judgment, kailan final na, paano i-execute, at anong temporary remedies ang available habang pending ang main action?</div>
+<div class="flow">PLAINTIFF RESTS
+   ↓
+Rule 33 Demurrer to Evidence
+   ↓
+Rules 34–35 Early judgment devices
+   ↓
+Rule 36 Judgment / final order / entry
+   ↓
+Rule 37 MNT or MR  ──→  Appeal (Rules 40–45 / Rule 64)
+   ↓                              ↓
+Final & Executory  ←──────────────┘
+   ↓
+Rule 38 Petition for Relief (exceptional)
+Rule 47 Annulment (exceptional)
+   ↓
+Rule 39 Execution, satisfaction, effects
+   ↘
+Rules 57–61 Provisional remedies operate as ancillary protection while main action is pending</div>
+
+<h3>Three questions you should ask in almost every remedial-law problem</h3>
+<ol>
+<li><b>What stage is the case in?</b> Before judgment, after judgment but before finality, or after finality?</li>
+<li><b>What court rendered the assailed judgment/order and in what jurisdiction?</b> MTC, RTC original, RTC appellate, quasi-judicial agency, CA, COMELEC/COA?</li>
+<li><b>What exactly is being attacked?</b> Error of fact/law, jurisdictional error/grave abuse, or a final judgment allegedly void or procured through extrinsic fraud?</li>
+</ol>
+<div class="callout good"><div class="label">Core doctrine</div>Certiorari under Rule 65 is not a substitute for a lost appeal. Always identify the proper ordinary remedy first.</div>
+
+</section>
+
+<section id="masterflow">
+<h2>0A. Visual Master Flowchart</h2>
+<div class="kwentobox"><b>QUICK VIEW:</b> Use this poster when you want to see the whole CivPro II sequence at a glance—from the point when the plaintiff rests, through judgment-stage devices and appeals, up to finality and execution. Provisional remedies are shown separately because they operate while the principal action is still pending.</div>
+<img class="flowchart-poster" src="assets/images/civpro2-flowchart-poster.png" alt="Civil Procedure II Flowchart — From Plaintiff Rests to Execution">
+<div class="poster-actions">
+  <a href="flowchart.html">Open interactive HTML flowchart</a>
+  <a href="assets/images/civpro2-flowchart-poster.png" target="_blank" rel="noopener">Open poster image</a>
+</div>
+
+<section id="r33">
+<h2>1. Rule 33 — Demurrer to Evidence</h2>
+<div class="kwentobox"><b>KWENTO:</b> Nakapag-present na si plaintiff at nag-rest. Sabi ni defendant: “Kahit tanggapin natin ang evidence niya as presented, kulang pa rin para magkaroon siya ng right to relief.” That is the basic logic of a civil demurrer to evidence.</div>
+<h3>Rule</h3>
+<div class="rulebox"><b>Ground:</b> upon the facts and the law, the plaintiff has shown no right to relief. In practical terms, the evidence is insufficient to establish the plaintiff’s cause.</div>
+<table>
+<tr><th>Point</th><th>Rule 33</th></tr>
+<tr><td>Who files?</td><td>Defendant.</td></tr>
+<tr><td>When?</td><td>After plaintiff has completed presentation of evidence and rested.</td></tr>
+<tr><td>What does court test?</td><td>Legal and evidentiary sufficiency of plaintiff’s case.</td></tr>
+<tr><td>If denied?</td><td>Defendant proceeds to present evidence.</td></tr>
+<tr><td>If granted?</td><td>Case is dismissed on the merits; plaintiff may appeal the judgment.</td></tr>
+<tr><td>If grant is reversed on appeal?</td><td>Defendant is deemed to have waived the right to present evidence; appellate court resolves on the existing record as the Rules direct.</td></tr>
+</table>
+<div class="correction"><strong>Verified Correction / Clarification:</strong> Under the 2019 Amendments, the <b>order denying</b> a demurrer to evidence is not subject to appeal or petition for certiorari, prohibition, or mandamus <b>before judgment</b>. Do not use the older shortcut “interlocutory = Rule 65 available” here; the amended text expressly restricts these attacks before judgment.</div>
+<h3>Civil vs Criminal Demurrer</h3>
+<table>
+<tr><th>Point</th><th>Civil — Rule 33</th><th>Criminal — Rule 119, Sec. 23</th></tr>
+<tr><td>Filed after</td><td>Plaintiff rests</td><td>Prosecution rests</td></tr>
+<tr><td>Leave of court</td><td>Not the controlling distinction</td><td>Critical; filing without leave has waiver consequences if denied</td></tr>
+<tr><td>Effect of grant</td><td>Dismissal appealable by plaintiff</td><td>Acquittal generally protected by double jeopardy; prosecution’s recourse is exceptionally limited</td></tr>
+<tr><td>Effect of reversal</td><td>Defendant loses right to present evidence</td><td>Different due-process/double-jeopardy framework</td></tr>
+</table>
+<details><summary>Recitation one-liner</summary><p><b>Rule 33 tests whether, after the plaintiff rests, the evidence is legally sufficient to establish a right to relief.</b></p></details>
+</section>
+
+<section id="r34">
+<h2>2. Rule 34 — Judgment on the Pleadings</h2>
+<div class="kwentobox"><b>KWENTO:</b> May answer nga si defendant, pero wala naman talagang issue: either inamin niya ang material allegations or ang denial niya is legally ineffective. So bakit pa mag-trial?</div>
+<div class="rulebox"><b>When proper:</b> the answer fails to tender an issue or otherwise admits the material allegations of the adverse party’s pleading.</div>
+<h3>What the court looks at</h3>
+<p>Judgment on the pleadings is fundamentally based on the <b>pleadings themselves</b>. The defect is not lack of evidence; it is the absence of a real issue in the answer.</p>
+<table>
+<tr><th>Example</th><th>Result</th></tr>
+<tr><td>Defendant expressly admits material allegations</td><td>JOP may be proper.</td></tr>
+<tr><td>Defendant makes a defective denial of an actionable document when a specific denial under oath is required</td><td>The matter may be deemed admitted; JOP may become proper depending on the pleadings.</td></tr>
+<tr><td>Answer raises payment, novation, fraud, or another genuine factual defense</td><td>JOP generally improper because an issue is tendered.</td></tr>
+</table>
+<div class="callout warn"><div class="label">Mandatory proof despite admissions</div>In actions for declaration of nullity or annulment of marriage or for legal separation, the material facts alleged in the complaint must still be proved.</div>
+<div class="correction"><strong>Verified 2019 rule:</strong> The court may, <i>motu proprio</i> or on motion, render judgment on the pleadings when the answer fails to tender an issue or admits the material allegations. Any action of the court on a motion for judgment on the pleadings is expressly not subject to appeal or petitions for certiorari, prohibition, or mandamus.</div>
+</section>
+
+<section id="r35">
+<h2>3. Rule 35 — Summary Judgment</h2>
+<div class="kwentobox"><b>KWENTO:</b> Sa pleadings mukhang may issue. Pero pag tiningnan ang affidavits, admissions, depositions, at documents, fake/sham lang pala ang issue. No genuine issue of material fact = no reason for a full trial.</div>
+<div class="rulebox"><b>Two requirements:</b> (1) no genuine issue as to any material fact; and (2) movant is entitled to judgment as a matter of law.</div>
+<h3>JOP vs Summary Judgment</h3>
+<table>
+<tr><th></th><th>Judgment on Pleadings</th><th>Summary Judgment</th></tr>
+<tr><td>Apparent issue in answer?</td><td>No real issue tendered</td><td>Issue appears in pleadings, but evidence shows it is not genuine</td></tr>
+<tr><td>Materials considered</td><td>Pleadings</td><td>Pleadings + affidavits + depositions + admissions + other proper materials</td></tr>
+<tr><td>Core test</td><td>No issue</td><td>No genuine issue of material fact</td></tr>
+</table>
+<div class="callout"><div class="label">Material fact</div>A fact is material if it can affect the outcome under the governing substantive law. A factual disagreement over an irrelevant detail does not bar summary judgment.</div>
+<div class="correction"><strong>Verified 2019 rule:</strong> The adverse party may file a comment and opposing affidavits/depositions/admissions within a <b>non-extendible five (5) calendar days</b> from receipt of the motion. A hearing is not automatic; the court may order one. Any action of the court on the motion is expressly not subject to appeal or petitions for certiorari, prohibition, or mandamus.</div>
+</section>
+
+<section id="r36">
+<h2>4. Rule 36 — Judgments, Final Orders & Entry</h2>
+<h3>Requisites of a judgment/final order on the merits</h3>
+<ul>
+<li>In writing.</li><li>Personally and directly prepared by the judge.</li>
+<li>Clearly and distinctly states the facts and the law on which it is based.</li>
+<li>Signed by the judge.</li><li>Filed with the clerk of court.</li>
+</ul>
+<h3>Final for appeal vs final for execution</h3>
+<table>
+<tr><th>Sense of “final”</th><th>Meaning</th></tr>
+<tr><td>Final order / judgment for purposes of appeal</td><td>Disposes of the case or a distinct appealable matter; nothing substantial remains regarding the merits involved in that adjudication.</td></tr>
+<tr><td>Final and executory</td><td>No longer subject to ordinary appeal because the period lapsed, the right was waived/abandoned, or appellate review was exhausted.</td></tr>
+</table>
+<div class="callout good"><div class="label">Immutability</div>Once final and executory, a judgment generally becomes immutable and unalterable. Recognized exceptions are narrow, such as clerical corrections, nunc pro tunc entries, void judgments, and exceptional supervening circumstances affecting execution.</div>
+</section>
+
+<section id="r37">
+<h2>5. Rule 37 — Motion for New Trial / Reconsideration</h2>
+<table>
+<tr><th></th><th>Motion for New Trial</th><th>Motion for Reconsideration</th></tr>
+<tr><td>Basic idea</td><td>Reopen proceedings because fairness or newly discovered evidence warrants a new trial.</td><td>Ask the same court to reconsider the judgment based on errors shown by the record.</td></tr>
+<tr><td>Grounds</td><td>FAME + newly discovered evidence</td><td>Damages excessive; evidence insufficient; decision/final order contrary to law</td></tr>
+<tr><td>Period</td><td>Within period to appeal</td><td>Within period to appeal</td></tr>
+<tr><td>Effect if timely</td><td>Interrupts finality and triggers the fresh-period doctrine where applicable</td><td>Same basic effect where doctrine applies</td></tr>
+</table>
+<h3>Newly discovered evidence — quick test</h3>
+<ol><li>Discovered after trial.</li><li>Could not have been discovered and produced at trial despite reasonable diligence.</li><li>Material, not merely cumulative/corroborative/impeaching.</li><li>Probably changes the result.</li></ol>
+<div class="callout warn"><div class="label">Exam trap</div>An order denying MNT/MR is generally not separately appealed. The appeal is from the underlying judgment/final order, raising the denial as an assigned error where proper.</div>
+</section>
+
+<section id="appeals">
+<h2>6. Appeals & Review — Rules 40, 41, 42, 43, 45 and 64</h2>
+<div class="kwentobox"><b>KWENTO:</b> Hindi puwedeng “appeal lang.” Kailangan alam mo: saan galing ang decision, original or appellate jurisdiction ba, anong issues ang iaakyat, at saang court pupunta.</div>
+<table>
+<tr><th>Rule</th><th>From → To</th><th>Mode</th><th>Typical scope</th><th>Basic period</th></tr>
+<tr><td><b>40</b></td><td>MTC → RTC</td><td>Notice of appeal</td><td>Fact, law, mixed</td><td>15 days; 30 if record on appeal required</td></tr>
+<tr><td><b>41</b></td><td>RTC original → CA</td><td>Ordinary appeal / notice of appeal</td><td>Fact, law, mixed</td><td>15 days; 30 if record on appeal required</td></tr>
+<tr><td><b>42</b></td><td>RTC appellate → CA</td><td>Petition for review</td><td>Fact, law, mixed</td><td>15 days, extension subject to Rule</td></tr>
+<tr><td><b>43</b></td><td>Quasi-judicial agency → CA</td><td>Petition for review</td><td>Fact, law, mixed</td><td>15 days, possible 15-day extension under Rule</td></tr>
+<tr><td><b>45</b></td><td>CA / Sandiganbayan / CTA En Banc / qualifying RTC judgment → SC</td><td>Appeal by certiorari</td><td>Generally pure questions of law</td><td>15 days, subject to Rule 45</td></tr>
+<tr><td><b>64 + 65</b></td><td>COMELEC or COA → SC</td><td>Special civil action for certiorari as modified by Rule 64</td><td>Jurisdictional / grave abuse framework</td><td>30 days under Rule 64; MR/MNT interrupts but does not create a fresh full period</td></tr>
+</table>
+<div class="correction"><strong>Important correction:</strong> Do not memorize Rule 64 as a “15-day appeal.” Rule 64, Sec. 3 provides a <b>30-day</b> period from notice of judgment/final order/resolution. A timely MR/MNT interrupts the period, but after denial only the <b>remaining period</b> runs, never less than five days.</div>
+<h3>Rule 40 — MTC to RTC</h3>
+<ul><li>Notice of appeal filed with the MTC.</li><li>RTC reviews as appellate court.</li><li>Appellant’s memorandum is crucial after notice that the record is complete.</li><li>When MTC dismissed for lack of jurisdiction but RTC actually has original jurisdiction, Rule 40 contains special treatment allowing the RTC to proceed according to the Rule rather than reflexively dismiss.</li></ul>
+<h3>Rule 41 — RTC original to CA</h3>
+<ul><li>Ordinary appeal.</li><li>Notice of appeal filed in the RTC.</li><li>Record on appeal applies in special proceedings and cases allowing multiple/separate appeals.</li><li>Residual jurisdiction remains in the trial court before transmittal of the records for specified matters.</li></ul>
+<h3>Rule 42 — RTC appellate to CA</h3>
+<p>Discretionary petition for review. It is not the same as a Rule 41 ordinary appeal.</p>
+<h3>Rule 43 — quasi-judicial agencies to CA</h3>
+<p>Used to review errors of fact, law, or mixed fact and law of covered quasi-judicial agencies. Filing ordinarily does not stay the challenged agency decision unless the CA orders otherwise.</p>
+<h3>Rule 45 — appeal by certiorari</h3>
+<p>Rule 45 is an <b>appeal</b>, despite the phrase “by certiorari.” It generally addresses questions of law. Factual review is exceptional.</p>
+<h3>Rule 45 vs Rule 65</h3>
+<table>
+<tr><th></th><th>Rule 45</th><th>Rule 65</th></tr>
+<tr><td>Nature</td><td>Appeal</td><td>Original special civil action</td></tr>
+<tr><td>Main error</td><td>Error of judgment / law</td><td>Lack/excess of jurisdiction or grave abuse amounting thereto</td></tr>
+<tr><td>Typical period</td><td>15 days</td><td>60 days, subject to Rule 65</td></tr>
+<tr><td>MR prerequisite</td><td>Not universally indispensable</td><td>Generally required unless recognized exception applies</td></tr>
+<tr><td>Effect on judgment</td><td>Governed by rules on appeal/finality</td><td>Does not by itself stay execution</td></tr>
+</table>
+<div class="callout bad"><div class="label">Never say</div>“Rule 65 is the backup when the appeal period was missed.” That is exactly the trap. Rule 65 is not a substitute for appeal.</div>
+</section>
+
+<section id="r38">
+<h2>7. Rule 38 — Petition for Relief from Judgment, Order, or Proceeding</h2>
+<div class="kwentobox"><b>KWENTO:</b> Final na ang judgment, pero hindi dahil pinabayaan mo lang. Na-deprive ka ng fair chance to protect yourself because of FAME: Fraud, Accident, Mistake, or Excusable Negligence.</div>
+<h3>Nature</h3>
+<ul><li>Extraordinary and equitable.</li><li>Available only to a party to the original proceeding.</li><li>Filed in the <b>same court and same case</b>.</li><li>Not a substitute for appeal lost through ordinary negligence.</li></ul>
+<h3>Two situations</h3>
+<ol><li>Judgment/final order/proceeding was entered or taken against a party through FAME → ask that it be set aside.</li><li>Party was prevented by FAME from taking an appeal → ask that the appeal be given due course.</li></ol>
+<h3>Double period</h3>
+<div class="rulebox"><b>Both must be satisfied:</b> within <b>60 days from knowledge</b> of the judgment/final order/proceeding AND not more than <b>6 months from entry/taking</b> thereof.</div>
+<h3>Contents</h3>
+<p>Verified petition accompanied by affidavits showing the FAME relied upon and the facts constituting the petitioner’s good and substantial cause of action or defense.</p>
+<h3>Fraud</h3>
+<table>
+<tr><th>Extrinsic fraud</th><th>Intrinsic fraud</th></tr>
+<tr><td>Prevents a party from fairly presenting the case or defense — e.g., deceptive conduct that keeps the party away from court.</td><td>Fraud occurring in the trial itself, such as perjured testimony or falsified evidence that could have been contested during the proceedings.</td></tr>
+<tr><td>Can support Rule 38 when requisites are met.</td><td>Ordinarily not enough for Rule 38.</td></tr>
+</table>
+</section>
+
+<section id="r47">
+<h2>8. Rule 47 — Annulment of Judgments or Final Orders and Resolutions</h2>
+<div class="kwentobox"><b>KWENTO:</b> Final na ang RTC judgment, ordinary remedies are no longer available through no fault attributable to the petitioner, and the attack is based on the narrow grounds allowed by Rule 47.</div>
+<h3>Nature and venue</h3>
+<ul><li>Original action in the Court of Appeals.</li><li>Targets final judgments/orders/resolutions of the RTC in civil actions when ordinary remedies are no longer available through no fault of the petitioner.</li></ul>
+<h3>Grounds</h3>
+<table>
+<tr><th>Ground</th><th>Period</th><th>Key point</th></tr>
+<tr><td>Extrinsic fraud</td><td>Within 4 years from discovery</td><td>Not available if the fraud was or could have been used as ground for new trial or petition for relief.</td></tr>
+<tr><td>Lack of jurisdiction</td><td>Before barred by laches or estoppel</td><td>Jurisdictional nullity, not mere error of judgment.</td></tr>
+</table>
+<h3>Rule 38 vs Rule 47</h3>
+<table>
+<tr><th></th><th>Rule 38</th><th>Rule 47</th></tr>
+<tr><td>Where filed</td><td>Same court, same case</td><td>CA, original action</td></tr>
+<tr><td>Main grounds</td><td>FAME</td><td>Extrinsic fraud or lack of jurisdiction</td></tr>
+<tr><td>Period</td><td>60 days from knowledge + 6 months from entry/taking</td><td>4 years from discovery for extrinsic fraud; jurisdiction subject to laches/estoppel</td></tr>
+<tr><td>Character</td><td>Continuation in the same proceeding</td><td>Independent original action</td></tr>
+</table>
+</section>
+
+<section id="r39">
+<h2>9. Rule 39 — Execution, Satisfaction & Effect of Judgments</h2>
+<div class="kwentobox"><b>KWENTO:</b> Nanalo ka nga, pero kung hindi mo ma-enforce, papel lang ang victory. Rule 39 converts the adjudication into actual compliance.</div>
+
+<h3>A. Execution as a matter of right</h3>
+<p>When a judgment or final order is final and executory, execution ordinarily issues as a matter of right <b>on motion</b>. The court’s duty is ministerial once the requisites are present.</p>
+<div class="correction"><strong>Verified correction to the lecture note on “notice of hearing / scrap of paper”:</strong> Under the 2019 Rule 15, a <b>motion for issuance of a writ of execution</b> is listed as a <b>non-litigious motion</b> and is <b>not set for hearing</b>. By contrast, a <b>motion for execution pending appeal</b> is a litigious motion; opposition is due within five calendar days, and a hearing is discretionary with the court. The old blanket “no notice of hearing = scrap of paper” formulation should not be used as the current general rule for an ordinary motion for writ of execution.</div>
+
+<h3>B. Discretionary execution / execution pending appeal</h3>
+<ul><li>Exception to the rule that execution waits for finality.</li><li>Requires motion, notice to adverse party, hearing, and <b>good reasons</b> stated in a special order.</li><li>Good reasons must be superior circumstances demanding immediate execution; mere winning is not enough.</li><li>May be stayed by sufficient supersedeas bond when allowed, subject to the Rule and the court’s determination.</li></ul>
+
+<h3>C. Five years / ten years</h3>
+<div class="flow">ENTRY OF FINAL JUDGMENT
+   │
+   ├─ Within 5 years → execution by MOTION
+   │
+   └─ After 5 years but before barred by prescription → INDEPENDENT ACTION to revive
+          │
+          └─ Revived judgment: enforceable by motion within 5 years from its entry,
+             then again by action before prescription bars it.</div>
+
+<h3>D. Writ must conform to judgment</h3>
+<p>The writ is only the instrument of enforcement. It cannot enlarge, alter, or vary the dispositive portion of the judgment.</p>
+
+<h3>E. Money judgment — basic order</h3>
+<ol><li>Immediate payment on demand.</li><li>If not paid, levy on property of judgment obligor not exempt from execution.</li><li>Garnishment of debts and credits in the hands of third persons where applicable.</li></ol>
+
+<h3>F. Judgment for specific acts — Sec. 10</h3>
+<table>
+<tr><th>Type</th><th>Execution concept</th></tr>
+<tr><td>Conveyance / delivery of deeds / specific acts</td><td>If party fails to comply within specified time, court may direct another person to perform at disobedient party’s cost; for property in the Philippines, court may divest and vest title by order.</td></tr>
+<tr><td>Sale of real or personal property</td><td>Officer sells as directed by judgment and Rule 39.</td></tr>
+<tr><td>Delivery or restitution of real property</td><td>Officer places entitled party in possession; removal/demolition follows rule-specific safeguards.</td></tr>
+<tr><td>Delivery of personal property</td><td>Officer takes possession and delivers it to party entitled, with money component satisfied as provided.</td></tr>
+</table>
+
+<h3>G. Terceria / third-party claim — Sec. 16</h3>
+<p>A third person claiming property levied on may serve an affidavit of title/right to possession on the officer and a copy on the judgment obligee. The sheriff is not bound to keep the property if the judgment obligee fails to post the required indemnity bond on demand. This does not prevent a separate action to vindicate ownership/right.</p>
+<div class="callout warn"><div class="label">Bond deadline</div>A claim for damages against the third-party-claim bond must be filed within the period specified by Rule 39; under the 2019 amendments, the relevant bond claim period is <b>120 days from filing of the bond</b>.</div>
+
+<h3>H. Examination after judgment</h3>
+<p>Rule 39 provides post-judgment examination mechanisms to discover property or income of the judgment obligor and, in proper situations, obligations owed by third persons.</p>
+
+<h3>I. Effects of judgments</h3>
+<table>
+<tr><th>Concept</th><th>Quick formulation</th></tr>
+<tr><td>Res judicata — bar by prior judgment</td><td>Prior final judgment bars relitigation of the same cause of action when requisites are present.</td></tr>
+<tr><td>Conclusiveness of judgment</td><td>Even with a different cause of action, issues actually and directly adjudged may be conclusive between the same parties/privies.</td></tr>
+<tr><td>Foreign judgments</td><td>Effect depends on whether judgment is upon a specific thing or against a person; presumptive evidence may be repelled by want of jurisdiction, want of notice, collusion, fraud, or clear mistake of law or fact under Rule 39, Sec. 48.</td></tr>
+</table>
+</section>
+
+<section id="provisional">
+<h2>10. Provisional Remedies — Rules 57–61</h2>
+<div class="kwentobox"><b>KWENTO:</b> Main case is still pending, but waiting for final judgment may make the final victory useless. Provisional remedies preserve property, status quo, possession, or support while the principal case is unresolved.</div>
+<table>
+<tr><th>Rule</th><th>Remedy</th><th>What it protects</th></tr>
+<tr><td>57</td><td>Preliminary Attachment</td><td>Property / security for possible satisfaction; sometimes jurisdiction over the res</td></tr>
+<tr><td>58</td><td>Preliminary Injunction / TRO</td><td>Status quo / prevention or compulsion regarding acts</td></tr>
+<tr><td>59</td><td>Receivership</td><td>Property or fund in danger of loss, waste, or dissipation</td></tr>
+<tr><td>60</td><td>Replevin</td><td>Provisional possession of personal property</td></tr>
+<tr><td>61</td><td>Support pendente lite</td><td>Temporary support during pendency of action</td></tr>
+</table>
+<div class="callout warn"><div class="label">Do not overgeneralize</div>Not every provisional remedy has the same affidavit, bond, notice, hearing, timing, or court requirements. Memorize each Rule separately.</div>
+</section>
+
+<section id="r57">
+<h2>11. Rule 57 — Preliminary Attachment</h2>
+<h3>Purpose</h3>
+<ul><li>Secure property for satisfaction of a future favorable judgment.</li><li>In appropriate cases, enable quasi in rem jurisdiction over property when personal jurisdiction over defendant is unavailable.</li></ul>
+<h3>When</h3>
+<p>At the commencement of the action or at any time before entry of judgment, upon a ground expressly allowed by Rule 57.</p>
+<h3>Affidavit requirements — high yield</h3>
+<ul><li>Sufficient cause of action exists.</li><li>Case falls under one of the grounds in Sec. 1.</li><li>No other sufficient security for the claim exists.</li><li>Amount due / value sought is at least the amount for which attachment is requested, over and above counterclaims.</li></ul>
+<div class="callout bad"><div class="label">Fraud trap</div>Nonpayment alone is not fraud. If attachment is based on fraudulent contracting of debt or fraudulent disposal of property, concrete facts showing fraudulent intent must be alleged, not merely the word “fraudulently.”</div>
+<h3>Attachment bond</h3>
+<p>The applicant posts a bond in the amount fixed by the court, conditioned to pay costs and damages sustained if attachment is later adjudged wrongful. <b>Do not confuse this with replevin’s double-value bond.</b></p>
+<h3>Levy and summons</h3>
+<p>As a rule, levy must be preceded or accompanied by service of summons, complaint, application, affidavit, bond, and order, subject to the specific exceptions in Rule 57, Sec. 5 — including nonresident defendants and certain situations where personal/substituted service cannot be made despite diligent efforts.</p>
+
+<div class="media-card">
+  <h4>Video Explainer</h4>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-title">Rule 57 — Preliminary Attachment</div>
+      <iframe src="https://www.youtube.com/embed/7aaLJv-LGAY" title="Rule 57 — Preliminary Attachment" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="r58">
+<h2>12. Rule 58 — Preliminary Injunction & TRO</h2>
+<h3>Preliminary injunction</h3>
+<p>An order at any stage before judgment requiring a party, court, agency, or person to refrain from a particular act; a mandatory injunction may require performance of an act.</p>
+<h3>Core requisites</h3>
+<ul><li>Applicant has a clear and unmistakable right requiring protection.</li><li>There is a material and substantial invasion or threatened invasion.</li><li>Urgent necessity exists to prevent serious or irreparable injury.</li><li>No adequate ordinary remedy will sufficiently protect the right in time.</li></ul>
+<h3>TRO time limits</h3>
+<table>
+<tr><th>Issuer</th><th>Period</th></tr>
+<tr><td>RTC / trial court ordinary TRO</td><td>Up to 20 days from service, within which injunction issue must be resolved.</td></tr>
+<tr><td>Executive judge / presiding judge in extreme urgency</td><td>72 hours ex parte from issuance; included in the maximum 20-day period.</td></tr>
+<tr><td>Court of Appeals / member</td><td>60 days from service.</td></tr>
+<tr><td>Supreme Court / member</td><td>Effective until further orders.</td></tr>
+</table>
+<div class="callout warn"><div class="label">Automatic expiration</div>The TRO cannot be extended or renewed on the same ground beyond the Rule’s maximum period. If preliminary injunction is not granted within the applicable period, the TRO is automatically vacated.</div>
+
+<div class="media-card">
+  <h4>Video Explainer</h4>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-title">Rule 58 — Preliminary Injunction / TRO</div>
+      <iframe src="https://www.youtube.com/embed/W24jimK6iH0" title="Rule 58 — Preliminary Injunction / TRO" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="r59">
+<h2>13. Rule 59 — Receivership</h2>
+<div class="kwentobox"><b>KWENTO:</b> May property/fund in litigation at risk of being lost, removed, wasted, or materially injured. Instead of giving possession to either litigant, the court appoints a neutral receiver to preserve/administer it.</div>
+<h3>High-yield grounds</h3>
+<ul><li>Applicant has an interest in property/fund that is in danger of being lost, removed, or materially injured.</li><li>In foreclosure, property is in danger of waste/dissipation/material injury and probably insufficient to discharge the mortgage debt, or conditions in the mortgage justify a receiver.</li><li>After judgment, to preserve property during appeal or to aid execution when appropriate.</li><li>Other cases when necessary to preserve property or rights of parties.</li></ul>
+<p>Appointment is extraordinary because it displaces possession/control; courts require a strong showing of necessity.</p>
+
+<div class="media-card">
+  <h4>Video Explainer</h4>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-title">Rule 59 — Receivership</div>
+      <iframe src="https://www.youtube.com/embed/MD1q2dPkEw0" title="Rule 59 — Receivership" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="r60">
+<h2>14. Rule 60 — Replevin</h2>
+<div class="kwentobox"><b>KWENTO:</b> Personal property is allegedly wrongfully detained by defendant. Plaintiff wants provisional possession now, before final judgment.</div>
+<h3>Timing</h3>
+<p>Application may be made at the commencement of the action or <b>at any time before the defendant answers</b>.</p>
+<h3>Affidavit</h3>
+<ul><li>Applicant is owner or entitled to possession.</li><li>Property is wrongfully detained by defendant, stating cause of detention according to best knowledge.</li><li>Actual market value.</li><li>Property has not been taken for tax/assessment/fine, seized under execution or attachment, or otherwise in custodia legis — or if so seized, it is exempt.</li></ul>
+<h3>Bond</h3>
+<div class="rulebox">Applicant’s replevin bond = <b>double the value of the property</b>, conditioned for return if adjudged and payment of sums recovered against applicant.</div>
+<p>Defendant may object to sufficiency of bond/sureties or seek return by posting a counterbond in accordance with the Rule.</p>
+
+<div class="media-card">
+  <h4>Video Explainer</h4>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-title">Rule 60 — Replevin</div>
+      <iframe src="https://www.youtube.com/embed/Viv7nifYYxk" title="Rule 60 — Replevin" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="r61">
+<h2>15. Rule 61 — Support Pendente Lite</h2>
+<div class="kwentobox"><b>KWENTO:</b> Habang pending ang action, may party or child who needs legally demandable support now, not years later after judgment.</div>
+<ul><li>Temporary support while the principal action is pending.</li><li>Application is supported by facts showing entitlement and financial conditions relevant to amount.</li><li>Court fixes provisional support after proper opportunity to respond/hearing under the Rule.</li><li>If final judgment shows recipient was not entitled to support, Rule 61 provides mechanisms concerning restitution.</li></ul>
+<div class="callout warn"><div class="label">Correction in approach</div>Do not memorize “support pendente lite is only RTC” as a universal abstract proposition. Jurisdiction depends on the principal action and governing statutes/rules; family courts are RTC branches for covered family matters. Focus first on where the principal action properly belongs.</div>
+
+<div class="media-card">
+  <h4>Video Explainer</h4>
+  <div class="video-grid">
+    <div class="video-card">
+      <div class="video-title">Rule 61 — Support Pendente Lite</div>
+      <iframe src="https://www.youtube.com/embed/lT2xGzY3bnk" title="Rule 61 — Support Pendente Lite" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="comparisons">
+<h2>16. High-Yield Comparison Tables</h2>
+<h3>Rule 33 vs 34 vs 35</h3>
+<table>
+<tr><th>Device</th><th>Timing</th><th>Core question</th><th>Material used</th></tr>
+<tr><td>Rule 33 Demurrer</td><td>After plaintiff rests</td><td>Has plaintiff shown a right to relief?</td><td>Plaintiff’s evidence + law</td></tr>
+<tr><td>Rule 34 JOP</td><td>After answer; when answer fails to tender issue</td><td>Is there any issue at all?</td><td>Pleadings</td></tr>
+<tr><td>Rule 35 Summary Judgment</td><td>After relevant pleading stage</td><td>Is any material factual issue genuine?</td><td>Pleadings + affidavits/depositions/admissions</td></tr>
+</table>
+
+<h3>Before finality vs after finality</h3>
+<table>
+<tr><th>Stage</th><th>Typical remedies</th></tr>
+<tr><td>Before finality</td><td>MNT/MR; appeal; proper interlocutory remedies if expressly allowed</td></tr>
+<tr><td>After finality</td><td>Rule 38, Rule 47, direct/collateral attack in narrow situations; Rule 39 execution from prevailing party’s side</td></tr>
+</table>
+
+<h3>Direct vs collateral attack</h3>
+<p><b>Direct attack:</b> the action/proceeding is instituted specifically to annul, reverse, vacate, or set aside the judgment. <b>Collateral attack:</b> validity of judgment is challenged incidentally in another proceeding; generally disfavored except where nullity is apparent and the law allows it.</p>
+</section>
+
+<section id="corrections">
+<h2>17. Verified Corrections & Lecture Traps</h2>
+<ol>
+<li><b>Rule 39 ordinary writ motion:</b> under the 2019 Rule 15, a motion for issuance of a writ of execution is non-litigious and not set for hearing. The older “motion without notice of hearing = scrap of paper” formulation is not the current general rule for this motion.</li>
+<li><b>Execution pending appeal:</b> different from ordinary execution as a matter of right; it is litigious and requires good reasons in a special order.</li>
+<li><b>Rule 64 period:</b> 30 days, not a fresh 15-day period after MR. MR interrupts the period; only the balance remains, with the Rule’s minimum protection.</li>
+<li><b>Attachment bond:</b> do not use “double the value” — that belongs to replevin. Attachment bond is in the amount fixed by court under Rule 57.</li>
+<li><b>TRO:</b> 72-hour ex parte TRO is not a separate extra period; it is included in the 20-day maximum for the trial-court TRO.</li>
+<li><b>Rule 34 and 35 attacks:</b> the 2019 text expressly states that any court action on these motions is not subject to appeal or petitions for certiorari, prohibition, or mandamus.</li>
+<li><b>Demurrer denial:</b> expressly not subject to appeal/certiorari/prohibition/mandamus before judgment under the amended Rule 33.</li>
+<li><b>Support pendente lite jurisdiction:</b> avoid saying “only RTC” without tying it to the principal action and applicable jurisdictional law.</li>
+<li><b>Finality language:</b> distinguish “final order for appeal” from “final and executory judgment.” They are not identical.</li>
+</ol>
+</section>
+
+<section id="recit">
+<h2>18. Recitation Drills</h2>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q1. Plaintiff rests. Defendant says plaintiff’s evidence is insufficient. Remedy?</b><div class="answer"><b>A:</b> Demurrer to evidence under Rule 33.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q2. Demurrer denied. Can defendant immediately file Rule 65 certiorari?</b><div class="answer"><b>A:</b> No. Under the amended Rule 33, denial is not subject to appeal or certiorari, prohibition, or mandamus before judgment.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q3. Answer admits all material allegations. Best judgment-stage device?</b><div class="answer"><b>A:</b> Judgment on the pleadings under Rule 34, subject to exceptions such as specified matrimonial actions where material facts must still be proved.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q4. Answer alleges payment, but Rule 26 admissions show no payment was made. Possible device?</b><div class="answer"><b>A:</b> Summary judgment under Rule 35 if no genuine issue of material fact remains.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q5. RTC decided in original jurisdiction; mixed questions of fact and law. Mode?</b><div class="answer"><b>A:</b> Ordinary appeal under Rule 41 to the Court of Appeals.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q6. RTC decided as appellate court. Mode to CA?</b><div class="answer"><b>A:</b> Petition for review under Rule 42.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q7. Quasi-judicial agency decision; errors of fact and law. Mode?</b><div class="answer"><b>A:</b> Petition for review under Rule 43, if the agency is covered and no special rule provides otherwise.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q8. COMELEC en banc final resolution allegedly issued with grave abuse. Mode?</b><div class="answer"><b>A:</b> Petition for certiorari under Rule 65 in relation to Rule 64, filed in the Supreme Court within the Rule 64 period.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q9. Judgment final because lawyer simply forgot to appeal. Can Rule 38 automatically rescue client?</b><div class="answer"><b>A:</b> No. Rule 38 is extraordinary and requires FAME plus strict compliance with the double period and a meritorious cause/defense.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q10. Rule 38 double period?</b><div class="answer"><b>A:</b> Within 60 days from knowledge and not more than 6 months from entry/taking of the judgment, final order, or proceeding.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q11. Final RTC judgment, ordinary remedies unavailable without petitioner’s fault, ground is lack of jurisdiction. Remedy?</b><div class="answer"><b>A:</b> Annulment of judgment under Rule 47 in the Court of Appeals, subject to its requisites.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q12. Final judgment entered 4 years ago. How enforce?</b><div class="answer"><b>A:</b> By motion under Rule 39, Sec. 6, assuming within five years from entry and no other bar.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q13. Final judgment entered 7 years ago and not yet prescribed. How enforce?</b><div class="answer"><b>A:</b> By independent action to revive the judgment before prescription bars it.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q14. Third person owns property wrongfully levied. Immediate Rule 39 device?</b><div class="answer"><b>A:</b> Third-party claim (terceria) under Sec. 16, without prejudice to a separate action.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q15. Applicant says debtor “fraudulently refused to pay,” but alleges no concrete fraudulent acts. Attachment?</b><div class="answer"><b>A:</b> Insufficient if fraud is the relied-upon ground. Nonpayment alone does not establish fraud; specific facts showing fraudulent intent are required.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q16. Replevin bond amount?</b><div class="answer"><b>A:</b> Double the value of the personal property.</div></div>
+<div class="quiz" onclick="this.classList.toggle('open')"><b>Q17. Trial-court ex parte TRO in extreme urgency lasts 72 hours. Can another full 20 days be added?</b><div class="answer"><b>A:</b> No. The 72 hours are included in the total maximum 20-day period.</div></div>
+</section>
+
+<section id="coverage">
+<h2>19. Syllabus Coverage Tracker</h2>
+<table>
+<tr><th>Syllabus Part</th><th>Status in uploaded lectures</th><th>Reviewer status</th></tr>
+<tr><td>Part I — Rules 33–36</td><td>Covered in July 29 lecture</td><td><b>Integrated</b></td></tr>
+<tr><td>Rule 37</td><td>Covered in orientation lecture</td><td><b>Integrated</b></td></tr>
+<tr><td>Rules 40–45; Rule 64</td><td>Covered in Aug. 12 lecture</td><td><b>Integrated</b></td></tr>
+<tr><td>Rule 38; Rule 47; judgment attacks</td><td>Covered in Aug. 26/30 notes</td><td><b>Integrated</b></td></tr>
+<tr><td>Rule 39</td><td>Covered in Sept. 2 lecture</td><td><b>Integrated</b></td></tr>
+<tr><td>Rules 57–61</td><td>Covered in Sept. 16 lecture, with stronger detail on attachment, injunction/TRO and replevin</td><td><b>Integrated + corrected</b></td></tr>
+<tr><td>Part IV — Special Civil Actions, Rules 62–71</td><td>Listed in syllabus, but not substantively covered by the uploaded lecture set</td><td><b>Not invented here.</b> Add when corresponding lectures/materials are uploaded.</td></tr>
+</table>
+<div class="callout good"><div class="label">How to use this reviewer</div>First pass: read KWENTO + tables. Second pass: memorize the flow and periods. Third pass: click the recitation questions without looking at answers. Fourth pass: search a Rule number and review only the correction boxes and exam traps.</div>
+<p class="small">Basis: uploaded CivPro II lectures dated July 29, Aug. 12, Aug. 26/30, Sept. 2, Sept. 16, 2026, plus the course syllabus. Corrections were checked against the 2019 Amendments to the 1997 Rules of Civil Procedure and current Rule text available from official/primary legal sources.</p>
+</section>
+</main>
+</div>
+<script>
+function expandAll(){document.querySelectorAll('details').forEach(d=>d.open=true);document.querySelectorAll('.quiz').forEach(q=>q.classList.add('open'))}
+function collapseAll(){document.querySelectorAll('details').forEach(d=>d.open=false);document.querySelectorAll('.quiz').forEach(q=>q.classList.remove('open'))}
+const s=document.getElementById('search');
+s.addEventListener('input',()=>{
+  const q=s.value.trim().toLowerCase();
+  document.querySelectorAll('main section').forEach(sec=>{
+    const hit=!q || sec.innerText.toLowerCase().includes(q);
+    sec.classList.toggle('hidden-by-search',!hit);
+  });
+});
+</script>
+</body></html>
